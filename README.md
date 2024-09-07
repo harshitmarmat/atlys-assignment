@@ -1,14 +1,18 @@
 
 -Login Page
-    -login Component
-    -Signup Component
+    -login Component (done)
+    -Signup Component (done)
 
 -Home Page
-    -Intro Component
-    -create Post
-    -All post
-    -login Modal(HOC login component)
-    -Signup Modal(HOC login component)
+    -Intro Component  (done)
+    -create Post (done)
+    -All post   (done)
+    -Auth Modal (merge in one HOC component)
+        -login Modal(HOC login component) 
+        -Signup Modal(HOC login component)
+
+-Modal animation (done)
+    -visible on clicking Post button Or any post
 
 
 -fontsizes/weight
@@ -31,6 +35,11 @@
     -lightblack(#191920)
     -white(#FFFFFF)
     -blue(#4A96FF)
+
+-things pending 
+    -responsiveness (half done)
+    -dynamic import 
+    -basic validation
 
 
 # Getting Started with Create React App
