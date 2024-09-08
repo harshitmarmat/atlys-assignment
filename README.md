@@ -37,9 +37,9 @@
     -blue(#4A96FF)
 
 -things pending 
-    -responsiveness (half done)
-    -dynamic import 
-    -basic validation
+    -responsiveness (done)
+    -dynamic import (done, not necessary for this project as it is very small)
+    -basic validation (done)
 
 
 # Getting Started with Create React App
