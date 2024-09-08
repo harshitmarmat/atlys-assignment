@@ -1,44 +1,73 @@
 
 -Login Page
+
     -login Component (done)
+
     -Signup Component (done)
 
 -Home Page
+
     -Intro Component  (done)
+
     -create Post (done)
+
     -All post   (done)
+
     -Auth Modal (merge in one HOC component)
+
         -login Modal(HOC login component) 
+
         -Signup Modal(HOC login component)
 
 -Modal animation (done)
+
     -visible on clicking Post button Or any post
 
 
 -fontsizes/weight
+
     -14/500 - 7
+
     -16/400 - 3
+
     -16/500 - 4
+
     -18/600 - 2
+
     -18/500 - 1
+
     -28/500 - 1
+
     -14/600 - 1
+
     -12/500 - 1
 
 -colorvariants 
+
     -lightestgray(#6B6C70)
+
     -mediumgray(#C5C7CA)
+
     -gray(#7F8084)
+
     -darkgray(#27292D)
+
     -bordergray(#35373B)
+
     -black(#131319)
+
     -lightblack(#191920)
+
     -white(#FFFFFF)
+
     -blue(#4A96FF)
 
 -things pending 
+
     -responsiveness (done)
+
     -dynamic import (done, not necessary for this project as it is very small)
+
     -basic validation (done)
 
 
