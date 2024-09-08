@@ -1,11 +1,13 @@
 
--Login Page
+## Site Planning
+
+### Login Page
 
     -login Component (done)
 
     -Signup Component (done)
 
--Home Page
+### Home Page
 
     -Intro Component  (done)
 
@@ -19,12 +21,12 @@
 
         -Signup Modal(HOC login component)
 
--Modal animation (done)
+### Modal animation (done)
 
     -visible on clicking Post button Or any post
 
 
--fontsizes/weight
+### fontsizes/weight
 
     -14/500 - 7
 
@@ -42,7 +44,7 @@
 
     -12/500 - 1
 
--colorvariants 
+### colorvariants 
 
     -lightestgray(#6B6C70)
 
@@ -62,7 +64,7 @@
 
     -blue(#4A96FF)
 
--things pending 
+### things pending (done)
 
     -responsiveness (done)
 
