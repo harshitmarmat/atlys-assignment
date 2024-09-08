@@ -48,7 +48,7 @@ const Home = () => {
             openModal={openModal}
           />
           {post_data.map((post) => (
-            <PostCard post={post} openModal={openModal}/>
+            <PostCard key={post.id} post={post} openModal={openModal}/>
           ))}
         </div>
       </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import avatar from "../../assets/icons/avatar.svg";
 import dots from "../../assets/icons/dots.svg";
 import chat from "../../assets/icons/chat.svg";
 import OuterPostCard from "./OuterPostCard";

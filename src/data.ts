@@ -4,6 +4,7 @@ import avatar2 from "./assets/icons/avatar2.svg"
 
 export const post_data = [
   {
+    id:"p1",
     author_name: "Theresa Webb",
     time: "5mins ago",
     author_image: avatar,
@@ -14,6 +15,7 @@ export const post_data = [
     comments_count: 24,
   },
   {
+    id:"p2",
     author_name: "Marvin McKinney",
     time: "19mins ago",
     author_image: avatar2,
@@ -24,6 +26,7 @@ export const post_data = [
     comments_count: 14,
   },
   {
+    id:"p3",
     author_name: "Theresa Webb",
     time: "5mins ago",
     author_image: avatar,
@@ -34,6 +37,7 @@ export const post_data = [
     comments_count: 24,
   },
   {
+    id:"p4",
     author_name: "Marvin McKinney",
     time: "19mins ago",
     author_image: avatar2,
@@ -44,6 +48,7 @@ export const post_data = [
     comments_count: 14,
   },
   {
+    id:"p5",
     author_name: "Theresa Webb",
     time: "5mins ago",
     author_image: avatar,
@@ -54,6 +59,7 @@ export const post_data = [
     comments_count: 24,
   },
   {
+    id:"p6",
     author_name: "Marvin McKinney",
     time: "19mins ago",
     author_image: avatar2,
