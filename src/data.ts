@@ -80,3 +80,29 @@ export const footer_line = {
   text : "Not registered yet?",
   redirect_text : "Register →"
 }
+
+
+
+export const EMAILORUSERNAME = "emailOrUsername"
+export const PASSWORD = "password"
+export const GENERIC_ERROR = "This field cannot be empty"
+
+export const EMAIL = "email"
+export const USERNAME = "username"
+
+export const EMAIL_ERROR= "Enter valid email"
+
+export const CREATE_POST = "Create post"
+
+export const signup = {
+  heading: "SIGN UP",
+  sub_heading: "Create an account to continue",
+};
+
+export const footer_line_signup = {
+  text : "Already have an account?",
+  redirect_text : "Login →"
+}
+
+export const emailRegex = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
+ 

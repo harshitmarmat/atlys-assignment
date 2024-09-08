@@ -23,7 +23,7 @@ const withModalAuth = (AuthForm:AuthFormComponent) => {
               className="cursor-pointer z-10 absolute top-4 right-4 lg:top-6 lg:right-6"
               onClick={closeModal}
             />
-            <AuthForm />
+            <AuthForm closeModal={closeModal}/>
           </div>
         </div>
       );

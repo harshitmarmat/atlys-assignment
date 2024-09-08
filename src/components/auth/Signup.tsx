@@ -5,67 +5,83 @@ import AuthHeader from "./AuthHeader";
 import GradientBorderWrapper from "../wrapper/GradientBorderWrapper";
 import FooterLine from "./FooterLine";
 import { useNavigate } from "react-router-dom";
+import { EMAIL, EMAIL_ERROR, emailRegex, footer_line_signup, GENERIC_ERROR, PASSWORD, signup, USERNAME } from "../../data";
+import PasswordField from "./PasswordField";
 
 interface SignupProps {
   switchToLogin : () => void;
+  closeModal ?: () => void;
 }
 
-const Signup:React.FC<SignupProps> = ({switchToLogin}) => {
+const Signup:React.FC<SignupProps> = ({switchToLogin,closeModal}) => {
   const [loading, setLoading] = useState(false);
-  const emailRef = useRef(null);  // we can use useState for validation
-  const passwordRef = useRef(null);
-  const usernameRef = useRef(null);
+  const [error,setError] = useState<null|string>(null)
+
+  const emailRef = useRef<HTMLInputElement>(null);  
+  const passwordRef = useRef<HTMLInputElement>(null);
+  const usernameRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate()
 
-  const LoginHandler = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      navigate("/")
-    }, 1000);
-    // console.log(emailRef.current.value , passwordRef.current.value);
+
+  const validate = () => {
+    const email = emailRef?.current?.value || "";
+    const password = passwordRef?.current?.value;
+    const username = usernameRef?.current?.value;
+    if(!emailRegex.test(email)){
+      setError(EMAIL)
+      return false
+    }
+    if(username?.trim().length===0){
+      setError(USERNAME)
+      return false
+    }
+    if(password?.trim().length===0){
+      setError(PASSWORD)
+      return false
+    }
+    return true
+  }
+
+
+  const signupHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if(validate()){
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+        (typeof closeModal ==='function' )? closeModal():navigate("/")
+      }, 1000);
+    }
   };
   const button_text = loading ? "Loading..." : "Continue";
 
-  const signup = {
-    heading: "SIGN UP",
-    sub_heading: "Create an account to continue",
-  };
-
-  const footer_line = {
-    text : "Already have an account?",
-    redirect_text : "Login →"
-  }
 
   return (
     <GradientBorderWrapper>
       <AuthHeader {...signup} />
-      <form onSubmit={LoginHandler}>
+      <form onSubmit={signupHandler} noValidate>
         <InputField
           label_text="Email"
           input_type="email"
-          input_value={""}
           input_placeholder="Enter your email"
-          triggerHanldler={() => {}}
           input_ref={emailRef}
+          error={error===EMAIL}
+          triggerHanldler={()=>setError(null)}
+          error_text={EMAIL_ERROR}
         />
         <InputField
           label_text="Username"
           input_type="text"
-          input_value={""}
           input_placeholder="Choose a preferred username"
-          triggerHanldler={() => {}}
           input_ref={usernameRef}
+          error={error===USERNAME}
+          triggerHanldler={()=>setError(null)}
+          error_text={GENERIC_ERROR}
         />
-        <InputField
-          label_text="Password"
-          input_type="password"
-          input_value={""}
-          input_placeholder="Choose a strong password"
-          triggerHanldler={() => {}}
-          input_ref={passwordRef}
-          optional_text="Forgot password?"
+        <PasswordField
+          resetError={()=>setError(null)}
+          passwordRef={passwordRef}
+          error={error}
         />
         <Button
           extra_styling="my-2"
@@ -74,7 +90,7 @@ const Signup:React.FC<SignupProps> = ({switchToLogin}) => {
         />
       </form>
       <FooterLine 
-        {...footer_line}
+        {...footer_line_signup}
         triggerHanldler={switchToLogin}
       />
     </GradientBorderWrapper>

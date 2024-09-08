@@ -31,7 +31,7 @@ const Home = () => {
     <Fragment>
       <div
         className={`w-full lg:w-1/2 transition-transform duration-300 ${
-          isModalOpen && !isClosing ? " blur-sm " : ""
+          isModalOpen && !isClosing ? " blur-[2px] " : ""
         }`}
       >
         <div>
@@ -52,7 +52,7 @@ const Home = () => {
           ))}
         </div>
       </div>
-      {isModalOpen && <Modal isClosing={isClosing} closeModal={closeModal} />}
+      {isModalOpen && <Modal isClosing={isClosing}  closeModal={closeModal} />}
     </Fragment>
   );
 };

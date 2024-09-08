@@ -1,22 +1,24 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./components/home/Home";
 import Layout from "./components/wrapper/LayoutWrapper";
-import Auth from "./components/auth/Auth";
 import NotFound from "./components/common/NotFound";
+
+const Auth = lazy(()=>import("./components/auth/Auth"))
+const Home = lazy(()=>import("./components/home/Home"))
+
 
 const router = createBrowserRouter([
   {
     path: "/auth",
-    element: <Auth />,
+    element: <Suspense fallback={<div>Loading...</div>}><Auth /></Suspense>,
   },
   {
     path: "/",
-    element: <Home />,
+    element:  <Suspense fallback={<div>Loading...</div>}><Home /></Suspense>,
   },
   {
     path : "*",
-    element : <NotFound />
+    element : <Suspense fallback={<div>Loading...</div>}><NotFound /></Suspense>
   }
 ]);
 

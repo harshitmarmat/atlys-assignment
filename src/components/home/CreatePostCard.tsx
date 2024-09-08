@@ -3,19 +3,22 @@ import OuterPostCard from "./OuterPostCard";
 import MessageCard from "./MessageCard";
 import CircleEmoji from "../common/CircleEmoji";
 import Button from "../common/Button";
+import { CREATE_POST } from "../../data";
 
 interface CreatePostCardProps {
   openModal : ()=>void;
-  modal_animation : boolean
+  modal_animation : boolean,
+
 }
 
 const CreatePostCard:React.FC<CreatePostCardProps> = ({openModal,modal_animation}) => {
   const messageRef = useRef(null);
 
+
   return (
     <OuterPostCard>
       <div className=" text-DH1 flex mt-2 mb-4 justify-between text-mediumgray items-center">
-        Create post
+        {CREATE_POST}
       </div>
       <MessageCard>
         <CircleEmoji emoji="💬" />

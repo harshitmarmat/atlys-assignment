@@ -1,16 +1,23 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, lazy, Suspense, useState } from "react";
 import Signup from "./Signup";
-import Login from "./Login";
 import shape_svg from "../../assets/icons/shape.svg";
 
-export const AuthForm = () => {
+const Login = lazy(()=>import("./Login"))
+
+interface AuthFormProps {
+  closeModal ?: ()=>void
+}
+
+export const AuthForm:React.FC<AuthFormProps> = (props) => {
   const [isLogin, setLogin] = useState(false);
   return (
     <Fragment>
       {isLogin ? (
-        <Login switchToSignup={() => setLogin(false)} />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Login {...props} switchToSignup={() => setLogin(false)} />
+        </Suspense>
       ) : (
-        <Signup switchToLogin={() => setLogin(true)} />
+        <Signup {...props} switchToLogin={() => setLogin(true)} />
       )}
     </Fragment>
   );
