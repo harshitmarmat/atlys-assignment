@@ -9,7 +9,7 @@ const GradientBorderWrapper: React.FC<GradientBorderWrapperProps> = ({
 }) => {
   return (
     <div className="rounded-md p-[2px] bg-gradient-to-r from-gradient_from_gray to-gradient_to_gray ">
-      <div className="w-full flex flex-col h-full p-4 lg:p-8 rounded-md bg-darkgray">
+      <div className="w-full flex flex-col h-full px-4 py-10 lg:p-8 rounded-md bg-darkgray">
         {children}
       </div>
     </div>

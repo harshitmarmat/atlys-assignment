@@ -18,9 +18,9 @@ const CreatePostCard:React.FC<CreatePostCardProps> = ({openModal,modal_animation
         Create post
       </div>
       <MessageCard>
-        <CircleEmoji emoji="👋" />
+        <CircleEmoji emoji="💬" />
         <textarea
-          className="col-span-9 resize-none border-none focus:outline-none bg-lightblack text-gray text-DT1 placeholder:text-gray"
+          className="col-span-8 lg:col-span-9 resize-none border-none focus:outline-none bg-lightblack text-gray text-DT1 placeholder:text-gray"
           placeholder="How are you feeling today?"
           ref={messageRef}
           rows={3}

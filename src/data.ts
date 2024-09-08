@@ -64,3 +64,19 @@ export const post_data = [
     comments_count: 14,
   },
 ];
+
+
+export const home_header = {
+  user_name : "Jane",
+  sub_heading : "How are you doing today? Would you like to share something with the community 🤗"
+}
+
+export const login = {
+  heading: "WELCOME BACK",
+  sub_heading: "Log into your account",
+};
+
+export const footer_line = {
+  text : "Not registered yet?",
+  redirect_text : "Register →"
+}

@@ -38,7 +38,7 @@ const PostCard: React.FC<PostProps> = ({ post , openModal }) => {
 
       <MessageCard>
         <CircleEmoji emoji={post_message.emoji} />
-        <div className="col-span-9 text-gray text-DT1">{post_message.text}</div>
+        <div className="col-span-8 lg:col-span-9 text-gray text-DT1">{post_message.text}</div>
       </MessageCard>
 
       <div className="mt-4 flex items-center gap-2">
